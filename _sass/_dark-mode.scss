@@ -1,0 +1,85 @@
+@mixin dark-mode {
+  $text-color:       rgb(214, 214, 214);
+  $background-color: rgb(34, 34, 34);
+  $nav-color:        rgb(204, 204, 204);
+  $header-bg-color:  rgba(0, 0, 0, 0.7);
+  $code-bg-color:    rgb(68, 68, 68);
+  $table-row-odd-bg: rgb(41, 41, 41);
+  $footer-color:     rgb(188, 188, 188);
+  $footer-bg-color:  rgb(17, 17, 17);
+
+  body {
+    color: $text-color;
+    background-color: $background-color;
+  }
+
+  .site-header {
+    background-color: $header-bg-color;
+    color: $nav-color;
+    border-bottom-color: $grey-color-dark;
+  }
+
+  .site-nav {
+    @include media-query($on-palm) {
+      .menu-icon > svg path {
+        fill: $nav-color;
+      }
+
+      .trigger a {
+        color: $text-color;
+      }
+
+      &:hover {        
+        background-color: $background-color;
+        border-color: $grey-color-dark;
+      }
+    }
+  }
+
+  .site-title,
+  .site-title:visited,
+  .site-nav .page-link {
+    color: $text-color;
+  }
+
+  .site-footer {
+    background-color: $footer-bg-color;
+    border-top-color: $grey-color-dark;
+    color: $footer-color;
+
+    a {
+      color: $footer-color;
+
+      &:hover {
+        color: darken($footer-color, 25%);
+      }
+    }
+  }
+
+  table:not(.highlight) {
+    tbody>tr:nth-of-type(odd) {
+      background-color: $table-row-odd-bg;
+    }
+
+    th,
+    td {
+      border-color: $grey-color-dark;
+    }
+  }
+
+
+  a:hover {
+    color: $text-color
+  }
+
+  pre,
+  code,
+  kbd {
+    background: $code-bg-color;
+    border-color: $grey-color-dark;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
