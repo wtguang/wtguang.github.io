@@ -6,38 +6,51 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: Edit _config.yml to set your title!
-description: This is where the description of your site will go. You should change it by editing the _config.yml file. It can be as long as you like! Happy blogging... ❤
-github_username: jph00
-
-# Email and twitter are optional:
-email:
+title: light'blog
+description: 学如逆水行舟，不进则退 ❤
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://wtgunag.github.io" # the base hostname & protocol for your site
+nav:
+  - about
+  - posts
+  - categories
+  - download
+avatar_url: https://secure.gravatar.com/avatar/deb3a965cd52a9103cd865bbf01de5af
 twitter_username:
-
-# Set this to true to get LaTeX math equation support
-use_math:
-
-# Add your Google Analytics ID here if you have one and want to use it
+github_username: wtguang
+codepen_username:  wtguang
+linkedin_username:  james-shih-15277934
+instagram_username:  wtguang
+500px_username:  wtguang
+disqus_shortname: wtguang
 google_analytics:
 
-# Everything below here can be ignored, unless you want to change the theme entirely
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-octicons
-  - jekyll-github-metadata
+# Front Matter defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
 
-titles_from_headings:
-  enabled:     true
-  strip_title: true
-  collections: true
-
-highlighter: rouge
+# Build settings
 markdown: kramdown
 kramdown:
-  math_engine: katex
   input: GFM
-  auto_ids: true
   hard_wrap: false
-  syntax_highlighter: rouge
+permalink: /:year/:month/:day/:title.html
+highlighter: rouge
+gist:
+  noscript: false
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - vendor
+plugins:
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-sitemap
+  - jemoji
