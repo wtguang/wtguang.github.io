@@ -1,0 +1,302 @@
+// Site header
+.site-header {
+  background-color: $header-bg-color;
+  border-bottom: 1px solid darken($header-bg-color, 10%);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  color: $header-color;
+  min-height: $header-height;
+
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 99;
+}
+
+.site-title {
+  font-size: 26px;
+  line-height: $header-height;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+  text-decoration: none !important;
+  transition: color .5s;
+
+  &,
+  &:visited {
+    color: $nav-color;
+  }
+
+  &:hover {
+    color: $brand-color;
+  }
+
+  img {
+    border-radius: 50%;
+    height: 45px;
+    vertical-align: top;
+    margin-top: 5px;
+  }
+}
+
+.site-nav {
+  float: right;
+  font-weight: 300;
+  line-height: $header-height;
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: $nav-color;
+    line-height: $base-line-height;
+    text-decoration: none;
+    transition: color .5s;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
+
+        &:hover {
+          color: $brand-color;
+        }
+      }
+
+      @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+          display: block;
+          float: right;
+          width: 36px;
+          height: 26px;
+          line-height: 0;
+          padding-top: 10px;
+          text-align: center;
+
+          > svg {
+            width: 18px;
+            height: 15px;
+
+            path {
+              fill: $nav-color;
+            }
+          }
+        }
+
+        .trigger {
+          clear: both;
+          display: none;
+
+          a {
+            color: $text-color;
+          }
+        }
+
+        &:hover {
+          background-color: $background-color;
+          border-color: $grey-color-light;
+
+          .trigger {
+            display: block;
+            padding-bottom: 5px;
+          }
+        }
+
+        .page-link {
+          display: block;
+          padding: 5px 10px;
+        }
+      }
+    }
+
+
+
+// Site footer
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  background-color: $footer-bg-color;
+  color: $footer-color;
+  padding: $spacing-unit 0;
+
+  a {
+    color: $footer-color;
+    text-decoration: none;
+    transition: color .5s;
+
+    &:hover {
+      color: darken($footer-color, 25%);
+    }
+  }
+}
+
+.footer-heading {
+  font-size: 18px;
+  margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.footer-col-wrapper {
+  font-size: 15px;
+  color: $grey-color;
+  margin-left: -$spacing-unit / 2;
+  @extend %clearfix;
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
+  width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+  width:         calc(50% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-palm) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+
+// Page content
+.page-content {
+  padding: $spacing-unit 0;
+}
+
+.page-heading {
+  font-size: 20px;
+}
+
+.posts-within {
+  margin-left: 0;
+  list-style: none;
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-link {
+  position: relative;
+  padding-right: 50px;
+  font-size: 24px;
+
+  @include media-query($on-palm) {
+    font-size: 20px;
+    display: block;
+  }
+
+  time {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 36px;
+    color: $grey-color;
+    text-transform: uppercase;
+
+    @include media-query($on-palm) {
+      line-height: 30px;
+    }
+  }
+}
+
+
+
+// Posts
+.post-header {
+  @include bg-aqua-marine;
+  position: relative;
+  background-position: 50% 30%;
+  background-size: cover;
+  color: $header-color;
+  padding-top: $spacing-unit + $header-height;
+  padding-bottom: $spacing-unit;
+
+  &.with-bg {
+    padding-top: 50vh;
+  }
+
+  .bg-info {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  h1 {
+    color: #fff;
+  }
+
+  .post-meta {
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .5s;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.post-title {
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1;
+
+  @include media-query($on-laptop) {
+    font-size: 36px;
+  }
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    font-size: 32px;
+
+    @include media-query($on-laptop) {
+      font-size: 28px;
+    }
+  }
+
+  h3 {
+    font-size: 26px;
+
+    @include media-query($on-laptop) {
+      font-size: 22px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+
+    @include media-query($on-laptop) {
+      font-size: 18px;
+    }
+  }
+}
