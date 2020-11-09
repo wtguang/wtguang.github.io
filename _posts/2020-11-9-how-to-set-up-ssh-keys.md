@@ -1,6 +1,6 @@
 ---
 title: 设置 SSH 通过密钥登录
-author: James Shih
+author: light
 layout: post
 permalink: /2012/03/16/how-to-set-up-ssh-keys/
 categories:
